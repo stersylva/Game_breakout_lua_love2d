@@ -127,7 +127,7 @@ function generateWorld()
     -- tijolos mortos
     deadBricks = {}
 
-    local rectToFill = Rect.new(50, 50, love.graphics.getWidth() - 50, 200)
+    local rectToFill = Rect.new(50, 50, love.graphics.getWidth() - 50,300)
     local brickSize = Size.new(60, 20)
     local brickSpacing = Size.new(10, 10)
     bricks = {}
