@@ -121,5 +121,5 @@ function Rect:fill()
 		self.origin.x,
 		self.origin.y,
 		self.size.width,
-		self.size.height)
+		self.size.height,5,5)
 end

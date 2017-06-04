@@ -26,6 +26,10 @@ local paddle
 function love.load()
     math.randomseed(os.time())
     generateWorld()
+
+    background = love.graphics.newImage("Imagens/fundo.jpg")
+    love.mouse.setVisible(false) --Oculta o cursor do mouse para deoxar a tela limpa de qualquer coisa fora do jogo
+
 end
 
 function love.update(dt)
@@ -105,6 +109,9 @@ function love.update(dt)
 end
 
 function love.draw()
+    -- plano de fundo
+    love.graphics.draw(background, 10,10)
+
     -- tijolos
     for brick, _ in pairs(bricks) do
         brick:render()
@@ -127,8 +134,8 @@ function generateWorld()
     -- tijolos mortos
     deadBricks = {}
 
-    local rectToFill = Rect.new(50, 50, love.graphics.getWidth() - 50,300)
-    local brickSize = Size.new(60, 20)
+    local rectToFill = Rect.new(50, 50, love.graphics.getWidth() - 50,90)
+    local brickSize = Size.new(60,30)
     local brickSpacing = Size.new(10, 10)
     bricks = {}
     local x = rectToFill:left()
