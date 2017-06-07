@@ -3,6 +3,6 @@ function love.conf(t)
 	t.title = "Game Breakout em Lua"
 	t.window.width = 800
 	t.window.height = 600
-	t.window.borderless = false
+	t.window.borderless = true
 	t.window.fullscreen = false
 end
