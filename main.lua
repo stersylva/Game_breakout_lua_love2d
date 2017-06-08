@@ -1,3 +1,7 @@
+require "init"
+require "creditos"
+require "gameover"
+
 Timer = require('hump/timer')
 
 require "types"
@@ -24,6 +28,18 @@ local paddle
 -- pontos de entrada
 
 function love.load()
+
+
+  gamestate = "init"
+
+    screen_w = love.graphics.getWidth()
+    screen_h = love.graphics.getHeight()
+    print(screen_w)
+    print(screen_h)
+    init_load()
+
+
+
     math.randomseed(os.time())
     generateWorld()
 
@@ -33,6 +49,18 @@ function love.load()
 end
 
 function love.update(dt)
+
+
+
+  if gamestate == "init" then
+     init_update(dt)
+
+
+   end
+
+
+
+
     Timer.update(dt)
 
     -- carrega tijolos mortos
@@ -109,6 +137,34 @@ function love.update(dt)
 end
 
 function love.draw()
+
+
+
+  if gamestate == "init" then
+     init_draw()
+   
+   elseif gamestate == "gameover" then
+     gameover_draw()
+   end
+
+ end
+
+ function love.keypressed(key,unicode)
+
+   if gamestate == "init" then
+     init_keypressed(key,unicode)
+   elseif gamestate == "game" then
+     game_keypressed(key,unicode)
+   elseif gamestate == "gameover" then
+     gameover_keypressed(key,unicode)
+   end
+
+
+
+
+
+
+
     -- plano de fundo
     love.graphics.draw(background, 10,10)
 
