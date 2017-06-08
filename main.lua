@@ -112,6 +112,11 @@ function love.draw()
     -- plano de fundo
     love.graphics.draw(background, 10,10)
 
+    -- Descrição do nome do jogo e da Equipe
+    love.graphics.print("Game Breakout / Programação para jogos", 260, 15)
+    love.graphics.print("Equipe: Sandro, Stefania, Wilson e Witna", 260, 30)
+
+
     -- tijolos
     for brick, _ in pairs(bricks) do
         brick:render()
@@ -134,7 +139,7 @@ function generateWorld()
     -- tijolos mortos
     deadBricks = {}
 
-    local rectToFill = Rect.new(50, 50, love.graphics.getWidth() - 50,90)
+    local rectToFill = Rect.new(50, 50, love.graphics.getWidth() - 50,200)
     local brickSize = Size.new(60,30)
     local brickSpacing = Size.new(10, 10)
     bricks = {}

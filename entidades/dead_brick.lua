@@ -31,7 +31,7 @@ end
 function DeadBrick:render()
     -- cor
     local alpha = (self:maxAge() - self.age) * 255/2
-    love.graphics.setColor(255, 255, 255, alpha)
+    love.graphics.setColor(255, 0, 255, 155)
 
     -- rotação
     local rotation = self.age

@@ -22,7 +22,7 @@ function Ball:update(dt)
 end
 
 function Ball:render()
-    love.graphics.setColor(255, 0, 255, 200)
+    love.graphics.setColor(0, 0, 0, 300)
     self.rect:fill()
 end
 
